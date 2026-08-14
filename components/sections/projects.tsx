@@ -8,6 +8,18 @@ const projects = [
   {
     stack: 'Next.js + Prisma + Docker',
     badge: 'New',
+    title: 'Sonexa',
+    description:
+      'A premium social music streaming platform built as a full-stack Next.js app with Prisma and PostgreSQL. Search and play tracks instantly, host live listening rooms with synced playback, and let guests upvote the queue — all in a polished, motion-rich UI.',
+    impactLabel: 'HIGHLIGHT',
+    impact: 'Listen together, in perfect sync',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Docker', 'Tailwind', 'NextAuth', 'Framer Motion'],
+    github: 'https://github.com/gyana-rj/Sonexa',
+    live: 'https://sonexa-web.onrender.com/',
+  },
+  {
+    stack: 'Next.js + Prisma + Docker',
+    badge: 'New',
     title: 'App Forge',
     description:
       'An AI-assisted application builder containerized with Docker, using Prisma ORM and PostgreSQL data models to turn natural-language prompts into production-ready web apps with live preview streams.',
