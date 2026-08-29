@@ -42,6 +42,18 @@ const projects = [
     live: 'https://www.collaborativewhiteboard.tech/',
   },
   {
+    stack: 'React Native + Expo Router + Postgres',
+    badge: 'New',
+    title: 'Freshly',
+    description:
+      'A cross-platform (iOS, Android, Web) grocery list and meal planner built with Expo Router file-based routing and typed API routes. Clerk auth with secure token storage, a Neon Postgres backend via Drizzle ORM, Zustand state, and a NativeWind UI — shipped with EAS builds, OTA updates, and Sentry error tracking.',
+    impactLabel: 'HIGHLIGHT',
+    impact: 'One grocery list, every platform',
+    tags: ['React Native', 'Expo Router', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Clerk', 'Zustand', 'NativeWind'],
+    github: 'https://github.com/gyana-rj/freshly-expo',
+    live: 'https://devgyana-freshly.expo.app',
+  },
+  {
     stack: 'React + MongoDB',
     badge: 'Full-stack',
     title: 'Second Brain',
