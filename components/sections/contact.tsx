@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { Reveal } from '@/components/motion/reveal';
 import { site } from '@/lib/site';
 import { Input } from '@/components/ui/input';
@@ -65,42 +65,64 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="pt-24 sm:pt-28">
+    <section id="contact" className="pt-28 sm:pt-36">
       <div className="mx-auto max-w-4xl px-6">
-        <Reveal>
-          <h2 className="label">contact.</h2>
-          <p className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Let&apos;s build something together.
-          </p>
-          <p className="mt-3 text-muted-foreground">
-            Open to roles, freelance work, and collaboration. I usually reply
-            within a day.
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Open to roles, freelance work, and collaboration. Whether you have
+            a project in mind or just want to talk tech, I&apos;d love to hear
+            from you.
           </p>
 
-          <ul className="mt-6 divide-y divide-border border-y border-border">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={`mailto:${site.email}`}
+              className="inline-flex h-11 items-center gap-2 rounded-md bg-foreground px-5 text-sm font-medium text-background transition hover:bg-foreground/85"
+            >
+              <Mail size={16} />
+              Get in touch
+            </a>
+            {site.resumeUrl && (
+              <a
+                href={site.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Gyana_Ranjan_Sahoo_Resume.pdf"
+                className="inline-flex h-11 items-center gap-2 rounded-md border border-foreground/80 px-5 text-sm font-medium transition hover:bg-foreground hover:text-background"
+              >
+                <FileText size={16} />
+                Download Resume
+              </a>
+            )}
+          </div>
+
+          <div className="mt-8 flex items-center justify-center gap-2">
             {socials.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  target={s.href.startsWith('http') ? '_blank' : undefined}
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-between gap-4 py-3.5 text-sm"
-                >
-                  <span className="flex items-center gap-3">
-                    <s.icon size={16} className="text-muted-foreground" />
-                    <span className="font-medium">{s.label}</span>
-                  </span>
-                  <span className="flex min-w-0 items-center gap-2 text-muted-foreground transition-colors group-hover:text-foreground">
-                    <span className="truncate">{s.value}</span>
-                    <ArrowUpRight size={14} className="shrink-0" />
-                  </span>
-                </a>
-              </li>
+              <a
+                key={s.label}
+                href={s.href}
+                target={s.href.startsWith('http') ? '_blank' : undefined}
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="grid h-10 w-12 place-items-center rounded-md text-foreground/80 transition hover:bg-secondary hover:text-foreground"
+              >
+                <s.icon size={20} />
+              </a>
             ))}
-          </ul>
+          </div>
+
+          <p className="mt-8 text-foreground/90">
+            Open to full-stack, backend, and AI-agent engineering roles
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Response time: usually within 24 hours
+          </p>
         </Reveal>
 
-        <Reveal className="mt-10">
+        <Reveal className="mx-auto mt-14 max-w-2xl">
           {submitted ? (
             <div className="rounded-xl border border-border p-6 text-center">
               <h3 className="font-semibold">Message sent</h3>
