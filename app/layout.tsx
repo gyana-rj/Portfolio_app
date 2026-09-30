@@ -1,9 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Outfit } from 'next/font/google';
+import { Cursor } from '@/components/motion/cursor';
 import { ScrollProgress } from '@/components/motion/scroll-progress';
 
-const inter = Inter({
+const inter = Outfit({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   description:
     'Full-stack developer building reliable, scalable systems with a polished product layer. TypeScript, Node.js, Next.js, PostgreSQL, MongoDB, AWS.',
   authors: [{ name: 'Gyana Ranjan Sahoo' }],
+
 };
 
 export default function RootLayout({
@@ -23,7 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className={`${inter.className} font-medium antialiased`}>
+      <body className={`${inter.className} antialiased`}>
+        <div
+          aria-hidden
+          className="grid-bg pointer-events-none fixed inset-0 -z-10"
+        />
+        <Cursor />
         <ScrollProgress />
         {children}
       </body>

@@ -51,9 +51,6 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        ink: 'hsl(var(--ink))',
-        sand: 'hsl(var(--sand))',
-        cream: 'hsl(var(--cream))',
       },
       fontSize: {
         '7xl': ['4.5rem', { lineHeight: '1' }],

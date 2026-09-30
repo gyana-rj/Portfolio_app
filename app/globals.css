@@ -4,32 +4,26 @@
 
 @layer base {
   :root {
-    --background: 36 28% 91%;
-    --foreground: 20 10% 9%;
-    --card: 0 0% 100%;
-    --card-foreground: 20 10% 9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 9%;
-    --primary: 20 10% 9%;
-    --primary-foreground: 36 28% 91%;
-    --secondary: 36 20% 94%;
-    --secondary-foreground: 20 10% 9%;
-    --muted: 36 15% 87%;
-    --muted-foreground: 20 8% 46%;
-    --accent: 36 20% 94%;
-    --accent-foreground: 20 10% 9%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 11%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 62%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 96%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 36 15% 84%;
-    --input: 36 15% 84%;
-    --ring: 20 10% 9%;
-    --radius: 1rem;
-
-    --sand: 36 28% 91%;
-    --cream: 0 0% 100%;
-    --ink: 20 10% 9%;
-    --ink-muted: 20 8% 46%;
-    --surface: 36 20% 94%;
+    --border: 0 0% 16%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 70%;
+    --radius: 0.75rem;
   }
 }
 
@@ -49,28 +43,26 @@
 }
 
 @layer utilities {
-  .bg-ink {
-    background-color: hsl(var(--ink));
+  .label {
+    @apply text-base font-medium text-foreground;
   }
-  .text-ink {
-    color: hsl(var(--ink));
-  }
-  .text-ink-muted {
-    color: hsl(var(--ink-muted));
-  }
-  .bg-sand {
-    background-color: hsl(var(--sand));
-  }
-  .bg-cream {
-    background-color: hsl(var(--cream));
-  }
-  .label-caps {
-    @apply text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground;
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, hsl(0 0% 100% / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 100% / 0.07) 1px, transparent 1px);
+    background-size: 30px 30px;
+    -webkit-mask-image: linear-gradient(135deg, #000 0%, rgba(0,0,0,0.5) 45%, transparent 85%);
+    mask-image: linear-gradient(135deg, #000 0%, rgba(0,0,0,0.5) 45%, transparent 85%);
   }
 }
 
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
 ::selection {
-  background: hsl(20 10% 9% / 0.12);
+  background: hsl(0 0% 100% / 0.2);
   color: hsl(var(--foreground));
 }
 

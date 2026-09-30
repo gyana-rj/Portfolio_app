@@ -1,255 +1,144 @@
-'use client';
 
-import { Code2, Database, Cloud, Github, ArrowUpRight } from 'lucide-react';
-import { TiltCard } from '@/components/motion/tilt-card';
-import { RevealText } from '@/components/motion/reveal-text';
+import { Reveal } from '@/components/motion/reveal';
 
 const projects = [
   {
-    stack: 'Next.js + Prisma + Docker',
-    badge: 'New',
-    title: 'Sonexa',
-    description:
-      'A premium social music streaming platform built as a full-stack Next.js app with Prisma and PostgreSQL. Search and play tracks instantly, host live listening rooms with synced playback, and let guests upvote the queue — all in a polished, motion-rich UI.',
-    impactLabel: 'HIGHLIGHT',
-    impact: 'Listen together, in perfect sync',
-    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Docker', 'Tailwind', 'NextAuth', 'Framer Motion'],
+    title: 'App Forge — AI Mobile App Builder',
+    stack: 'Next.js, React Native, TypeScript, Prisma, AWS, Docker',
+    bullets: [
+      'Engineered an AI-powered platform that transforms natural-language prompts into production-ready React Native (Expo) applications, streaming LLM-generated code into a live in-browser WebContainer preview.',
+      'Architected a scalable Bun + Turborepo monorepo of four microservices (Next.js frontend, Express API, generation worker, AWS EC2 Auto Scaling orchestrator) secured with Clerk auth and a Prisma/PostgreSQL data layer.',
+      'Containerized every service with Docker, automated multi-image CI/CD via GitHub Actions, and deployed across Vercel, Render, and Neon with a server-side Expo tunnel for instant on-device previews.',
+    ],
+    tags: ['Next.js', 'React Native', 'TypeScript', 'Prisma', 'PostgreSQL', 'AWS', 'Docker', 'Clerk', 'Turborepo'],
+    github: 'https://github.com/gyana-rj/bolt-mobile-app',
+    live: 'https://bolt-mobile-app-frontend.vercel.app',
+  },
+  {
+    title: 'Sonexa — Social Music Streaming Platform',
+    stack: 'Next.js, TypeScript, Prisma, PostgreSQL, Docker',
+    bullets: [
+      'Built a full-stack music streaming app with instant track search, YouTube/Spotify playback, and a creator dashboard for managing live queues.',
+      'Implemented real-time listening rooms with synchronized playback, presence tracking, and community upvoting to shape the shared queue.',
+      'Architected a pnpm + Turborepo monorepo with a shared Prisma DB package, containerized deployment, and GitHub Actions CI/CD for Docker builds.',
+    ],
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Docker', 'Turborepo', 'GitHub Actions'],
     github: 'https://github.com/gyana-rj/Sonexa',
     live: 'https://sonexa-web.onrender.com/',
   },
   {
-    stack: 'Next.js + Prisma + Docker',
-    badge: 'New',
-    title: 'App Forge',
-    description:
-      'An AI-assisted application builder containerized with Docker, using Prisma ORM and PostgreSQL data models to turn natural-language prompts into production-ready web apps with live preview streams.',
-    impactLabel: 'HIGHLIGHT',
-    impact: 'Prompt-to-app in seconds',
-    tags: ['Next.js', 'TypeScript', 'Prisma', 'Docker', 'PostgreSQL', 'Tailwind'],
-    github: 'https://github.com/gyana-rj/bolt-mobile-app',
-    live: 'https://bolt-mobile-app-frontend.vercel.app/',
-  },
-  {
-    stack: 'Next.js + WebSockets',
-    badge: 'Live',
     title: 'Collaborative Real-Time Whiteboard',
-    description:
-      'A high-performance collaborative whiteboard built from scratch on the raw HTML5 Canvas API, with a custom non-blocking WebSocket protocol for sub-50ms multi-client sync. Turborepo monorepo, fully containerized, deployed on Render.',
-    impactLabel: 'HIGHLIGHT',
-    impact: 'Sub-50ms sync across clients',
-    tags: ['Next.js', 'TypeScript', 'WebSockets', 'Prisma', 'Docker'],
+    stack: 'React/Next.js, TypeScript, WebSockets, Prisma, Docker',
+    bullets: [
+      'Engineered a high-fidelity, touch-responsive collaborative canvas using the raw HTML5 Canvas API, optimizing client-side performance and frame rendering for seamless cross-device compatibility.',
+      'Architected a custom WebSocket protocol to handle asynchronous events, ensuring state synchronization across clients with sub-50ms latency.',
+    ],
+    tags: ['Next.js', 'TypeScript', 'WebSockets', 'HTML5 Canvas', 'Prisma', 'Docker'],
     github: 'https://github.com/gyana-rj/collaborative-whiteboard',
     live: 'https://www.collaborativewhiteboard.tech/',
   },
   {
-    stack: 'React Native + Expo Router + Postgres',
-    badge: 'New',
-    title: 'Freshly',
-    description:
-      'A cross-platform (iOS, Android, Web) grocery list and meal planner built with Expo Router file-based routing and typed API routes. Clerk auth with secure token storage, a Neon Postgres backend via Drizzle ORM, Zustand state, and a NativeWind UI — shipped with EAS builds, OTA updates, and Sentry error tracking.',
-    impactLabel: 'HIGHLIGHT',
-    impact: 'One grocery list, every platform',
-    tags: ['React Native', 'Expo Router', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Clerk', 'Zustand', 'NativeWind'],
+    title: 'Freshly — Cross-Platform Grocery & Meal Planner',
+    stack: 'React Native, Expo, TypeScript, PostgreSQL',
+    bullets: [
+      'Built a cross-platform (iOS, Android, Web) grocery list and meal planner app with Expo Router file-based routing and typed API routes, backed by Clerk authentication and secure token storage.',
+      'Designed a PostgreSQL schema via Drizzle ORM on Neon’s serverless driver, exposing REST endpoints for item CRUD, bulk-clear operations, and category/spending insights.',
+      'Implemented global state with Zustand and a NativeWind/Tailwind UI, and automated EAS builds/OTA updates and lint/typecheck CI/CD via GitHub Actions, with Sentry error tracking in production.',
+    ],
+    tags: ['React Native', 'Expo Router', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Clerk', 'Zustand', 'NativeWind', 'Sentry'],
     github: 'https://github.com/gyana-rj/freshly-expo',
     live: 'https://devgyana-freshly.expo.app',
   },
   {
-    stack: 'React + MongoDB',
-    badge: 'Full-stack',
     title: 'Second Brain',
-    description:
-      'A content aggregation platform with efficient MongoDB data models to store, categorize, and query large volumes of user links. Includes a public sharing system using cryptographically secure URLs and secure auth pipelines.',
-    impactLabel: 'HIGHLIGHT',
-    impact: 'Secure sharable collections',
+    stack: 'React, Node.js, MongoDB',
+    bullets: [
+      'A content aggregation platform with efficient MongoDB data models to store, categorize, and query large volumes of user links.',
+      'Includes a public sharing system using cryptographically secure URLs and secure auth pipelines.',
+    ],
     tags: ['TypeScript', 'React', 'Node.js', 'MongoDB', 'Tailwind'],
     github: 'https://github.com/gyana-rj/Projects',
-    live: null,
+    live: null as string | null,
   },
   {
-    stack: 'React + WebSockets',
-    badge: 'Real-time',
     title: 'Real-Time Chat Application',
-    description:
-      'A bidirectional messaging platform using WebSockets for sub-100ms delivery, with concurrent state management across multiple client instances and a scalable backend that routes high volumes of active connections.',
-    impactLabel: 'HIGHLIGHT',
-    impact: 'Sub-100ms message delivery',
+    stack: 'React, Express, WebSockets',
+    bullets: [
+      'A bidirectional messaging platform using WebSockets for sub-100ms delivery, with concurrent state management across multiple client instances.',
+      'Scalable backend that routes high volumes of active connections.',
+    ],
     tags: ['React.js', 'TypeScript', 'WebSockets', 'Express.js'],
     github: 'https://github.com/gyana-rj/Projects',
-    live: null,
+    live: null as string | null,
   },
 ];
 
-const capabilities = [
-  {
-    icon: Code2,
-    title: 'Web & backend development',
-    body: 'TypeScript, JavaScript, Node.js, Express.js, React.js, Next.js, HTML5, CSS3, and Tailwind CSS.',
-  },
-  {
-    icon: Database,
-    title: 'Databases & ORMs',
-    body: 'PostgreSQL, MongoDB, Prisma ORM, and SQL modeling for reliable application data layers.',
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud & DevOps',
-    body: 'Docker, AWS EC2 and S3, CI/CD with GitHub Actions, Git/GitHub, and Turborepo workflows.',
-  },
-];
-
-const steps = [
-  'Plan the application structure, feature scope, and deployment path before writing code.',
-  'Build full-stack features with reusable components, clear APIs, and dependable data models.',
-  'Package and automate delivery so the release process stays repeatable and low-risk.',
-  'Refine the experience, performance, and maintainability until the product is production-ready.',
-];
+const btn =
+  'inline-flex h-8 items-center rounded-md bg-foreground px-3 text-sm font-medium text-background transition hover:bg-foreground/85';
 
 export function Projects() {
   return (
-    <section id="work" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Header */}
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-24">
-          <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl leading-[1.1]">
-            <RevealText
-              words={[
-                { text: 'Selected' },
-                { text: 'projects,' },
-                { text: 'built' },
-                { text: 'end' },
-                { text: 'to' },
-                { text: 'end.' },
-              ]}
-            />
-          </h2>
-          <p className="self-end text-ink-muted leading-relaxed">
-            Real-time systems and full-stack products — from a collaborative
-            whiteboard on the raw Canvas API to low-latency messaging and
-            multiplayer game state. Each one shipped, containerized, and built
-            for scale.
-          </p>
-        </div>
+    <section id="work" className="pt-24 sm:pt-28">
+      <div className="mx-auto max-w-4xl px-6">
+        <Reveal>
+          <h2 className="label">projects.</h2>
+        </Reveal>
 
-        {/* project cards */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
-          {projects.map((p) => (
-            <div key={p.title}>
-              <TiltCard className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-cream p-6">
-              {/* Top row */}
-              <div className="flex items-start justify-between gap-3">
-                <span className="text-sm font-medium text-ink-muted">
-                  {p.stack}
-                </span>
-                <span className="shrink-0 rounded-full border border-border bg-sand px-2.5 py-0.5 text-xs font-medium text-ink-muted">
-                  {p.badge}
-                </span>
-              </div>
-
-              <h3 className="mt-3 text-3xl font-extrabold tracking-tight">
-                {p.title}
-              </h3>
-              <p className="mt-3 text-base font-medium text-ink-muted leading-relaxed">
-                {p.description}
-              </p>
-
-              {/* Impact */}
-              <div className="mt-8">
-                <span className="label-caps">{p.impactLabel}</span>
-                <p className="mt-1.5 text-base font-semibold">{p.impact}</p>
-              </div>
-
-              {/* Tags */}
-              <div className="mt-6 flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-border bg-sand px-3 py-1 text-sm font-semibold text-ink-muted"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              {/* Links */}
-              <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-border pt-5">
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 text-sm font-medium text-ink transition hover:text-ink-muted"
-                >
-                  <Github size={16} />
-                  Code
-                </a>
-                {p.live && (
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1 text-sm font-medium text-ink transition hover:text-ink-muted"
-                  >
-                    Live demo
-                    <ArrowUpRight
-                      size={15}
-                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
-                  </a>
-                )}
-              </div>
-              </TiltCard>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom 2-up row */}
-        <div className="mt-5 grid gap-5 lg:grid-cols-2">
-          {/* Capabilities — light */}
-          <div className="rounded-2xl border border-border bg-cream p-8 sm:p-10">
-            <span className="label-caps">Capabilities</span>
-            <h3 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
-              A focused stack with clear strengths.
-            </h3>
-
-            <div className="mt-8 space-y-7">
-              {capabilities.map((c) => (
-                <div key={c.title} className="flex gap-4">
-                  <div className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink text-sand">
-                    <c.icon size={18} />
+        <div className="mt-6 space-y-9">
+          {projects.map((p) => {
+            return (
+              <Reveal key={p.title}>
+                <article className="border-l border-border pl-5 transition-colors hover:border-foreground/60">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-lg font-medium">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground">{p.stack}</p>
+                    </div>
+                    <div className="flex shrink-0 gap-2">
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={btn}
+                      >
+                        Code
+                      </a>
+                      {p.live && (
+                        <a
+                          href={p.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={btn}
+                        >
+                          Live
+                        </a>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-lg font-semibold">{c.title}</p>
-                    <p className="mt-1 text-base text-ink-muted leading-relaxed">
-                      {c.body}
-                    </p>
+
+                  <ul className="mt-3 space-y-1.5 text-[15px] text-muted-foreground">
+                    {p.bullets.map((t) => (
+                      <li key={t} className="flex gap-2.5">
+                        <span className="text-muted-foreground/60">•</span>
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded bg-secondary px-2 py-1 text-xs text-foreground/80"
+                      >
+                        {t}
+                      </span>
+                    ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Process — dark */}
-          <div className="rounded-2xl bg-ink p-8 text-sand sm:p-10">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-sand/60">
-              Process
-            </span>
-            <h3 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
-              Reliable delivery comes from a disciplined process.
-            </h3>
-
-            <div className="mt-8 space-y-3">
-              {steps.map((step, i) => (
-                <div
-                  key={i}
-                  className="flex gap-4 rounded-xl bg-sand/[0.07] p-4"
-                >
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-sand/10 text-sm font-medium text-sand/70">
-                    {i + 1}
-                  </span>
-                  <p className="text-base text-sand/80 leading-relaxed">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
