@@ -12,7 +12,7 @@ const projects = [
     ],
     tags: ['Next.js', 'React Native', 'TypeScript', 'Prisma', 'PostgreSQL', 'AWS', 'Docker', 'Clerk', 'Turborepo'],
     github: 'https://github.com/gyana-rj/bolt-mobile-app',
-    live: 'https://bolt-mobile-app-frontend.vercel.app',
+    live: 'https://app-forge.devgyana.in',
   },
   {
     title: 'Sonexa — Social Music Streaming Platform',
