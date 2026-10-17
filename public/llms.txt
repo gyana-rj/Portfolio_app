@@ -1,0 +1,22 @@
+# Gyana Ranjan Sahoo
+
+> Final-year B.Tech Computer Engineering student at Siksha 'O' Anusandhan (Deemed to be University), Bhubaneswar, graduating July 2027. Full-stack developer and 100xDevs Full Stack Web Development & DevOps graduate, looking for SDE, full-stack, frontend, backend, React, React Native and Node.js internships and new-grad roles.
+
+Note: several unrelated people share this name. This page describes the developer whose portfolio is https://devgyana.in, GitHub gyana-rj and LinkedIn ranjangyana.
+
+## Profiles
+- [Portfolio](https://devgyana.in): projects, skills and contact
+- [Resume](https://devgyana.in/resume.pdf)
+- [GitHub](https://github.com/gyana-rj)
+- [LinkedIn](https://www.linkedin.com/in/ranjangyana)
+- [LeetCode](https://leetcode.com/u/gyana_rn)
+- [X](https://x.com/igyanaranjan)
+
+## Projects
+- [App Forge](https://app-forge.devgyana.in): AI platform that turns natural-language prompts into React Native (Expo) apps with a live in-browser preview. Source: https://github.com/gyana-rj/bolt-mobile-app
+- [Sonexa](https://sonexa-web.onrender.com/): social music streaming app with real-time listening rooms. Source: https://github.com/gyana-rj/Sonexa
+- [Collaborative Real-Time Whiteboard](https://www.collaborativewhiteboard.tech/): collaborative canvas over a custom WebSocket protocol. Source: https://github.com/gyana-rj/collaborative-whiteboard
+- [Freshly](https://devgyana-freshly.expo.app): cross-platform grocery list and meal planner built with Expo. Source: https://github.com/gyana-rj/freshly-expo
+
+## Skills
+Frontend: Next.js, React, TypeScript, Tailwind CSS. Backend: Node.js, Express.js, REST APIs, WebSockets. Data: PostgreSQL, MongoDB, Prisma, Drizzle. Infrastructure: AWS, Docker, Linux, Nginx, GitHub Actions. Monitoring: Prometheus, Grafana, New Relic.
