@@ -15,7 +15,7 @@ Note: several unrelated people share this name. This page describes the develope
 ## Projects
 - [App Forge](https://app-forge.devgyana.in): AI platform that turns natural-language prompts into React Native (Expo) apps with a live in-browser preview. Source: https://github.com/gyana-rj/bolt-mobile-app
 - [Sonexa](https://sonexa-web.onrender.com/): social music streaming app with real-time listening rooms. Source: https://github.com/gyana-rj/Sonexa
-- [Collaborative Real-Time Whiteboard](https://www.collaborativewhiteboard.tech/): collaborative canvas over a custom WebSocket protocol. Source: https://github.com/gyana-rj/collaborative-whiteboard
+- [CNVS — Collaborative Real-Time Whiteboard](https://www.collaborativewhiteboard.tech/): collaborative canvas over a custom WebSocket protocol. Source: https://github.com/gyana-rj/collaborative-whiteboard
 - [Freshly](https://devgyana-freshly.expo.app): cross-platform grocery list and meal planner built with Expo. Source: https://github.com/gyana-rj/freshly-expo
 
 ## Skills

@@ -24,7 +24,7 @@ export const projects = [
     live: 'https://sonexa-web.onrender.com/',
   },
   {
-    title: 'Collaborative Real-Time Whiteboard',
+    title: 'CNVS — Collaborative Real-Time Whiteboard',
     stack: 'React/Next.js, TypeScript, WebSockets, Prisma, Docker',
     bullets: [
       'Engineered a high-fidelity, touch-responsive collaborative canvas using the raw HTML5 Canvas API, optimizing client-side performance and frame rendering for seamless cross-device compatibility.',
