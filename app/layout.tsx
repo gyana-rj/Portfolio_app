@@ -4,6 +4,7 @@ import { Outfit } from 'next/font/google';
 import { Cursor } from '@/components/motion/cursor';
 import { ScrollProgress } from '@/components/motion/scroll-progress';
 import { site } from '@/lib/site';
+import { jsonLd } from '@/lib/jsonld';
 
 const inter = Outfit({
   subsets: ['latin'],
@@ -46,6 +47,12 @@ export default function RootLayout({
         <div
           aria-hidden
           className="grid-bg pointer-events-none fixed inset-0 -z-10"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+          }}
         />
         <Cursor />
         <ScrollProgress />
